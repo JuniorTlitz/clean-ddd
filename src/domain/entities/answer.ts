@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 
 export class Answer {
-  private content: string;
+  public content: string;
   private id: string;
 
   constructor(content: string, id?: string) {
