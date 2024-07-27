@@ -26,4 +26,32 @@ export class Question extends Entity<QuestionProps> {
       id
     );
   }
+
+  get authorId() {
+    return this.props.authorId;
+  }
+
+  get bestAnswerId() {
+    return this.props.bestAnswerId;
+  }
+
+  get title() {
+    return this.props.title;
+  }
+
+  get content() {
+    return this.props.content;
+  }
+
+  get slug() {
+    return this.props.slug;
+  }
+
+  get createdAt() {
+    return this.props.createdAt;
+  }
+
+  get updatedAt() {
+    return this.props.updatedAt;
+  }
 }

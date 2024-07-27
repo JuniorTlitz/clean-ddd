@@ -24,7 +24,23 @@ export class Answer extends Entity<AnswerProps> {
     );
   }
 
+  get authorId() {
+    return this.props.authorId;
+  }
+
+  get questionId() {
+    return this.props.questionId;
+  }
+
   get content() {
     return this.props.content;
+  }
+
+  get createdAt() {
+    return this.props.createdAt;
+  }
+
+  get updatedAt() {
+    return this.props.updatedAt;
   }
 }
