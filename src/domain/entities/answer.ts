@@ -1,11 +1,29 @@
 import { Entity } from "../../core/entities/entity";
+import { UniqueEntityId } from "../../core/entities/unique-entity-id";
+import { Optional } from "../../core/types/optional";
 
-interface QuestionProps {
+interface AnswerProps {
+  authorId: UniqueEntityId;
+  questionId: UniqueEntityId;
   content: string;
-  authorId: string;
-  questionId: string;
+  createdAt: Date;
+  updatedAt?: Date;
 }
-export class Answer extends Entity<QuestionProps> {
+
+export class Answer extends Entity<AnswerProps> {
+  static create(
+    props: Optional<AnswerProps, "createdAt">,
+    id?: UniqueEntityId
+  ) {
+    return new Answer(
+      {
+        ...props,
+        createdAt: new Date(),
+      },
+      id
+    );
+  }
+
   get content() {
     return this.props.content;
   }
